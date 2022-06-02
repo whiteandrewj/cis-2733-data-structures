@@ -1,0 +1,10 @@
+# vs code configs
+.vscode/*
+
+# executables
+*.exe
+
+# genrated by microsoft visual c++ (MSVC) compiler toolset
+*.ilk
+*.obj
+*.pdb
