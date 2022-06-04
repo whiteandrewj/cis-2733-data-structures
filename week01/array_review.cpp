@@ -32,6 +32,30 @@ double getMedian(int arr[], int numElements) {
     }
 }
 
+double getLowest2D(double arr[][5], int numRows, int numCols) {
+    double lowest = arr[0][0];
+    for (int i = 0; i < numRows; i++) {
+        for (int j = 0; j < numCols; j++) {
+            if (lowest > arr[i][j]) { 
+                lowest = arr[i][j];
+            }
+        }
+    }
+    return lowest;
+}
+
+double getHighest2D(double arr[][5], int numRows, int numCols) {
+    double highest = arr[0][0];
+    for (int i = 0; i < numRows; i++) {
+        for (int j = 0; j < numCols; j++) {
+            if (highest < arr[i][j]) {
+                highest = arr[i][j];
+            }
+        }
+    }
+    return highest;
+}
+
 
 
 int main()
@@ -39,7 +63,7 @@ int main()
     //Exercise 1
     default_random_engine defaultEngine(time(0));
     uniform_int_distribution<int> intDistro(0,100);
-    const int SIZE = 5;
+    const int SIZE = 20;
     int nums[SIZE];
     for (int i = 0; i < SIZE; i++) {
         nums[i] = intDistro(defaultEngine);
@@ -48,10 +72,10 @@ int main()
     for (int n : nums) {
         cout << n << " ";
     }
-    cout << endl;
+    cout << endl << endl;
 
     //Exercise 2
-    cout << SIZE << " numbers in rows of 10: " << endl;
+    cout << "Same " << SIZE << " numbers in rows of 10: " << endl;
     printArrayTenCol(nums,SIZE);
 
     //Exercise 3
@@ -78,7 +102,7 @@ int main()
     for (int i = SIZE-1; i > -1; i--) {
         cout << words[i] << " ";
     }
-    cout << endl;
+    cout << endl << endl;
 
     //Exercise 4
     const int SIZE2 = 100;
@@ -88,7 +112,7 @@ int main()
     }
     cout << SIZE2 << " randomly generated numbers:" << endl;
     for (int i = 0; i < SIZE2; i++) { cout << nums2[i] << " "; }
-    cout << endl << "Median of set: " << getMedian(nums2, SIZE2) << endl;
+    cout << endl << "Median of set: " << getMedian(nums2, SIZE2) << endl << endl;
 
     //Exercise 5
     const int ROWS = 5;
@@ -102,13 +126,17 @@ int main()
             grades[i][j] = round(temp * 100.0)/100.0;
         }
     }
-
+    cout << ROWS * COLS << " randomly generated grades: " << endl;
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
             cout << grades[i][j] << " ";
         }
         cout << endl;
     }
+
+    cout << "Lowest grade in array: " << getLowest2D(grades, ROWS, COLS) << endl;
+    cout << "Highest grade in array: " << getHighest2D(grades, ROWS, COLS) << endl;
+    
 
 
 
