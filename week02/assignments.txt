@@ -1,0 +1,4 @@
+
+1. Using a stack, write a program that can take an arithmetic statement written in postfix notation and evaluate it (find the result). For example, here is a simple postfix expression: 1 2 3 * +. This expression evaluates to 7. Remember to take into account the precedence of the arithmetic operators.
+2. Using a stack, write a function that takes a string and prints the string in reverse, such as "hello" -> "olleh". Use the function in a program.
+3. Using a queue, write a program that takes a string of lowercase characters from a file and converts them to uppercase characters and stores the converted characters in a second file.
