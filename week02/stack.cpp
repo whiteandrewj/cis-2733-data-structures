@@ -16,24 +16,38 @@ bool isNum(char c) {
     }
     return false;
 }
+bool isDelim(char c) {
+    if (c == ' ') {
+        return true;
+    }
+    return false;
+}
 
 int main()
 {
     stack<int> precedence;
     string expression = "5 1 2 3 + * -";
     string expression2 = "5 2 3 + 1 * -";
+    int leftOperand, rightOperand, result;
 
     string element = "";
 
     for (int i = 0; i < expression.size(); i++) {
-        while (isNum(expression[i])) {
-            element += expression[i];
-        }
-        if (isOp(expression[i])) {
-        
+        if (isNum(expression[i])) {
+            element += i;
+        } else if (isDelim(expression[i])) {
+            precedence.push(stoi(element));
+            element = "";
+        } else if (isOp(expression[i])) {
+            rightOperand = precedence.top();
+            precedence.pop();
+            leftOperand = precedence.top();
+            precedence.pop();
+            result = (leftOperand expression[i] rightOperand);
+            precedence.push(result);
+        } else {
+            cout << "incorrectly formated expression";
         }
     }
-
-
     return 0;
 }
