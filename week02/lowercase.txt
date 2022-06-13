@@ -1,0 +1,2 @@
+Transform these words from lowercase to uppercase,
+and output to a new file.
