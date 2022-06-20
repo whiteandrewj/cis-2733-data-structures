@@ -1,0 +1,4 @@
+1. Rewrite problem 3 from last week using a deque instead of a queue.
+2. Write a program that reads a large text file (use A Modest Proposal by Jonathan Swift, 
+you can find it online), word by word, and place the words into a set. How many unique 
+words are in the text? Show the number and a list of the words.
