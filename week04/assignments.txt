@@ -1,0 +1,9 @@
+
+1. Write a program that creates a map storing words and definitions. Create 
+functions for entering words/definitions and displaying a word's definition. 
+Be sure to test your functions.
+
+2. Write a quiz program that uses a map to quiz the user on US state capitols. 
+The program should ask the user to name the capitol of a given state and display 
+the answer and whether or not the user was right or wrong. Have the program generate 
+the states randomly. The program should quiz the user until the user says to stop.
