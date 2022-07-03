@@ -1,0 +1,4 @@
+Use the STL sort function to sort a randomly-generated array of 100,000 integers.
+Also time the sort to see how long it takes in milliseconds.
+Then, implement the bubble sort algorithm in your program (you can easily find C++ implementations of the bubble sort on the internet).
+Then time this function as it sorts the same array. What is the difference in these two sort functions? 

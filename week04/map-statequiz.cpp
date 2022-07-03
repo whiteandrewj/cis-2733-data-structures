@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void popCapitals(map<string, string> *capitals) {
+void popStatesAndCapitals(map<string, string> *capitals) {
     capitals->insert({"Alabama","Montgomery"});
     capitals->insert({"Alaska","Juneau"});
     capitals->insert({"Arizona","Phoenix"});
@@ -70,17 +70,17 @@ void popStates(map<string, string> stateCapitals,  string states[]) {
 int main()
 {
    //Assignment #2, state capital quiz
-    map<string, string> stateCapitals;
-    popCapitals(&stateCapitals);
+    map<string, string> statesAndCapitals;
+    popStatesAndCapitals(&statesAndCapitals);
     
-    string states[stateCapitals.size()];
-    popStates(stateCapitals, states);
+    string states[statesAndCapitals.size()];
+    popStates(statesAndCapitals, states);
 
     srand(time(0));
     string cont = "y", answer, state, capital;
     while (cont == "y") {
-        state = states[rand() % (stateCapitals.size() - 1)];
-        capital = stateCapitals.at(state);
+        state = states[rand() % (statesAndCapitals.size() - 1)];
+        capital = statesAndCapitals.at(state);
         cout << "What is the capital of " << state << "? " ;
         getline(cin,answer);
         transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
@@ -90,7 +90,7 @@ int main()
         } else {
             cout << "Sorry, that's incorrect. ";
         }
-        cout << "The capital of " << state << " is " << stateCapitals.at(state) << endl;
+        cout << "The capital of " << state << " is " << statesAndCapitals.at(state) << endl;
         cout << "Answer another? (y/n) : ";
         getline(cin, cont);
     }
