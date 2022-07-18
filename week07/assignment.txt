@@ -1,0 +1,6 @@
+Create an array (or vector) of at least 100,000 randomly-generated numbers. Implement the QuickSort version 
+referenced in the G-t-G link and compare it to the sort function that is part of the STL. Report the difference 
+in times. If you don't see a difference in times, do you find when if you increase the data set size by 1 or more 
+orders of magnitude. Be sure to demonstrate all of this in a C++ program that you submit.
+
+https://www.geeksforgeeks.org/cpp-program-for-quicksort/
