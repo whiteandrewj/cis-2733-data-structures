@@ -1,0 +1,16 @@
+Use an algorithm from the STL for these problems
+
+1. Write a function that checks to see if a value is less than 50. Use the function to find the first value in a vector that is less than 50. Have the function return the position in the vector.
+2. Rewrite Problem 1 using an anonymous function rather than a function.
+3. Write a function that checks to see if a value is even. Use the function to count the number of even values in a randomly generated vector of integers.
+4. Rewrite Problem 3 using an anonymous function.
+5. Using the vector from problems 3 and 4, write a program that removes all the odd values from the vector using a predicate function.
+6. Rewrite Problem 5 using an anonymous function.
+
+Removing and Replacing Elements
+
+1. Create a vector of words that end in "y" that are made plural by removing the "y" and adding "ies." Write a function that takes a word ending in "y" and makes it a plural by adding "ies." Use the function with the replace() algorithm to change all the words in the vector to plurals.
+2. Modify the vector of words ending in "y" in the problem above so that some words don't end in "y." Use the replace_if() function to only make words ending in "y" plural.
+3. Create a vector that contains 20 random numbers from 1 to 100. Use the remove() function to remove a value chosen by the user. Make sure the removal is permanent.
+4. Write a function that determines if a number is odd. Use the function with the remove_if() function to remove all the odd numbers from a randomly generated vector of numbers.
+5. Using an anonymous function, write a program that removes all the numbers between 0 and 49 permanently from a randomly generated vector of numbers.
