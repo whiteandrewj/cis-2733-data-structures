@@ -31,8 +31,19 @@ vector<string> genMixedWords() {
     words.push_back("bakery");
     return words;
 }
+void printWords(vector<string> words) {
+    for (string w : words) { cout << w << " "; }
+    cout << endl;
+}
+string pluralizeYWord(string word) {
+    word.pop_back();
+    word = word + "ies";
+    return word;
+}
+
+
 string currentWord = "";
-void setcurrentWord(string w) {
+void setCurrentWord(string w) {
     currentWord = w;
 }
 bool isYWord(string word) {
@@ -44,28 +55,26 @@ bool isYWord(string word) {
         return false;
     }
 }
-string pluralizeYWord(string word) {
-    word.pop_back();
-    word = word + "ies";
-    return word;
-}
+
 
 int main()
 {
+    //replace/remove problem #5
     vector<string> yWords = genYWords();
-    for (string w : yWords) { cout << w << " "; }
+    printWords(yWords);
     for (string w : yWords) {
         replace(yWords.begin(),yWords.end(),w,pluralizeYWord(w));
     }
-    for (string w : yWords) { cout << w << " "; }
+    printWords(yWords);
 
+    //replace/remove problem #6
     vector<string> mixedWords = genMixedWords();
-    for (string w : mixedWords) { cout << w << " "; }
+    printWords(mixedWords);
     for (string w : mixedWords) {
-        setcurrentWord(w);
+        setCurrentWord(w);
         replace_if(mixedWords.begin(),mixedWords.end(),isYWord,pluralizeYWord(w));
     }
-    for (string w : mixedWords) { cout << w << " "; }
+    printWords(mixedWords);
     
 
     return 0;

@@ -41,7 +41,8 @@ int main()
     cout << "30 random numbers: ";
     for (int n : numbers2) { cout << n << " "; }
     cout << endl << "Removing odd numbers from sequence..." << endl;
-    remove_if(numbers2.begin(),numbers2.end(),isOdd);
+    auto pos = remove_if(numbers2.begin(),numbers2.end(),isOdd);
+    numbers2.erase(pos,numbers2.end());
     cout << "Remaining numbers: ";
     for (int n : numbers2) { cout << n << " "; }
     cout << endl << endl;
@@ -55,9 +56,11 @@ int main()
     cout << "30 random numbers: ";
     for (int n : numbers3) { cout << n << " "; }
     cout << endl << "Removing numbers between 0 and 49 from sequence..." << endl;
-    remove_if(numbers3.begin(),numbers3.end(),[](int n) { if (n < 50 && n > 0) { return true;} else { return false; } });
+    auto pos2 = remove_if(numbers3.begin(),numbers3.end(),[](int n) { if (n < 50 && n > 0) { return true;} else { return false; } });
+    numbers3.erase(pos2,numbers3.end());
     cout << "Remaining numbers: ";
     for (int n : numbers3) { cout << n << " "; }
+    cout << endl << endl;
 
     return 0;
 }
