@@ -33,7 +33,8 @@ int main()
 {
     vector<int> numbers = genIntVector(200);
     printIntVector(numbers);
-    for_each(numbers.begin(),numbers.end(),isLessThan50);
+    auto iter = upper_bound(numbers.begin(),numbers.end(),50);
+    //cout << iter** << " ";
     //i need to use the iterator to find the position
     
 
